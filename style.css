@@ -1,49 +1,60 @@
 :root {
-  --accent: #f4a261;      /* soft muted orange */
-  --accent-light: #fde8d8;
-  --text-main: #2f2f2f;
-  --text-muted: #7a7a7a;
-  --card-bg: #ffffff;
+  --accent: #d88c5a;          /* muted warm accent */
+  --accent-soft: #f7efe9;
+  --text-main: #1f1f1f;
+  --text-muted: #6f6f6f;
+  --border-light: #e6e6e6;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
   font-family: 'Inter', system-ui, sans-serif;
-  background: #fafafa;
+  background: #fcfcfc;
   color: var(--text-main);
-  padding: 32px 18px 60px;
+  padding: 48px 20px 72px;
 }
 
 header {
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 72px;
 }
 
 h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.6rem;
-  margin-bottom: 8px;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 2.7rem;
+  font-weight: 400;
+  margin-bottom: 10px;
 }
 
 .subtitle {
   color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+main {
+  max-width: 1080px;
+  margin: 0 auto;
 }
 
 section {
-  max-width: 1000px;
-  margin: 0 auto 56px;
+  margin-bottom: 72px;
 }
 
 h2 {
   font-weight: 500;
-  margin-bottom: 18px;
-  color: #3a3a3a;
+  font-size: 1.1rem;
+  margin-bottom: 24px;
+  color: #2c2c2c;
 }
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 22px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 26px;
 }
 
 .card {
@@ -53,7 +64,7 @@ h2 {
 
 .card-inner {
   position: relative;
-  height: 160px;
+  height: 170px;
   transition: transform 0.7s ease;
   transform-style: preserve-3d;
 }
@@ -66,20 +77,20 @@ h2 {
 .card-back {
   position: absolute;
   inset: 0;
-  padding: 22px;
-  border-radius: 16px;
+  padding: 26px;
+  border-radius: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
-  backface-visibility: hidden;
   text-align: center;
+  backface-visibility: hidden;
 }
 
 .card-front {
-  background: var(--card-bg);
-  border: 1px solid #eaeaea;
+  background: #ffffff;
+  border: 1px solid var(--border-light);
   font-weight: 500;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.04);
 }
 
 .card-front:hover {
@@ -87,16 +98,16 @@ h2 {
 }
 
 .card-back {
-  background: var(--accent-light);
-  color: #3a2a1d;
+  background: var(--accent-soft);
+  color: #3b2a20;
   transform: rotateY(180deg);
-  font-size: 15px;
-  line-height: 1.45;
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 footer {
   text-align: center;
-  margin-top: 80px;
-  font-size: 13px;
+  margin-top: 100px;
+  font-size: 0.8rem;
   color: var(--text-muted);
 }
