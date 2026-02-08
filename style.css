@@ -1,28 +1,49 @@
+:root {
+  --accent: #f4a261;      /* soft muted orange */
+  --accent-light: #fde8d8;
+  --text-main: #2f2f2f;
+  --text-muted: #7a7a7a;
+  --card-bg: #ffffff;
+}
+
 body {
-  font-family: system-ui, -apple-system, sans-serif;
-  background: linear-gradient(180deg, #fff4ea, #ffffff);
-  color: #333;
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #fafafa;
+  color: var(--text-main);
+  padding: 32px 18px 60px;
+}
+
+header {
   text-align: center;
-  padding: 40px 20px;
+  margin-bottom: 48px;
 }
 
 h1 {
-  color: #ff7a00;
-  font-size: 2.4rem;
-  margin-bottom: 6px;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6rem;
+  margin-bottom: 8px;
 }
 
 .subtitle {
-  color: #777;
-  margin-bottom: 40px;
+  color: var(--text-muted);
+}
+
+section {
+  max-width: 1000px;
+  margin: 0 auto 56px;
+}
+
+h2 {
+  font-weight: 500;
+  margin-bottom: 18px;
+  color: #3a3a3a;
 }
 
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 22px;
-  max-width: 1000px;
-  margin: auto;
 }
 
 .card {
@@ -32,9 +53,8 @@ h1 {
 
 .card-inner {
   position: relative;
-  width: 100%;
-  height: 170px;
-  transition: transform 0.7s cubic-bezier(.4,.2,.2,1);
+  height: 160px;
+  transition: transform 0.7s ease;
   transform-style: preserve-3d;
 }
 
@@ -46,35 +66,37 @@ h1 {
 .card-back {
   position: absolute;
   inset: 0;
-  border-radius: 18px;
   padding: 22px;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
   backface-visibility: hidden;
+  text-align: center;
 }
 
 .card-front {
-  background: #ff8a1d;
-  color: white;
-  font-weight: 600;
-  box-shadow: 0 10px 25px rgba(255, 122, 0, 0.25);
+  background: var(--card-bg);
+  border: 1px solid #eaeaea;
+  font-weight: 500;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
 }
 
 .card-front:hover {
-  transform: translateY(-3px);
+  border-color: var(--accent);
 }
 
 .card-back {
-  background: #ffffff;
-  border: 2px solid #ffb066;
+  background: var(--accent-light);
+  color: #3a2a1d;
   transform: rotateY(180deg);
   font-size: 15px;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 footer {
-  margin-top: 50px;
-  color: #999;
+  text-align: center;
+  margin-top: 80px;
   font-size: 13px;
+  color: var(--text-muted);
 }
